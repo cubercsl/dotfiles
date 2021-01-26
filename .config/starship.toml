@@ -4,9 +4,6 @@ symbol = " "
 [conda]
 symbol = " "
 
-[cmake]
-symbol = "📐 "
-
 [dart]
 symbol = " "
 
