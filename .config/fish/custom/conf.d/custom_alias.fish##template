@@ -1,0 +1,4 @@
+{% if yadm.os == "Darwin" %}
+alias gcc="gcc-10"
+alias g++="g++-10"
+{% endif %}
