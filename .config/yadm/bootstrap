@@ -1,0 +1,11 @@
+#!/bin/sh
+YADM_CONFIG_PATH=${YADM_CONFIG_PATH:-$HOME/.config/yadm}
+if [ -d $YADM_CONFIG_PATH/bootstrap.d ]; then
+  for i in $YADM_CONFIG_PATH/bootstrap.d/*.sh; do
+    if [ -r $i ]; then
+      echo "> $(basename "$i")"
+      . $i
+    fi
+  done
+  unset i
+fi
