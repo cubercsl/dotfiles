@@ -1,0 +1,7 @@
+
+configuration {
+    modi: "window,run,drun";
+    show-icons: true;
+    icon-theme: "Adwaita";
+}
+@import "/usr/share/rofi/themes/Arc.rasi"

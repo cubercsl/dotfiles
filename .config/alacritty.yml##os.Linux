@@ -1,5 +1,12 @@
 draw_bold_text_with_bright_colors: true
 
+font:
+  
+  normal:
+    family: monospace
+  
+  size: 11
+
 colors:
 
   primary:
