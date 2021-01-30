@@ -4,5 +4,8 @@
 	signingkey = 45C64B19E9161E41
 [commit]
     gpgSign = true
+[pull]
+    rebase = true
 [include]
     path = .gitconfig.local
+
