@@ -1,3 +1,6 @@
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
+" =================================================================================================
 " download vim-plug if missing
 if empty(glob("~/.vim/autoload/plug.vim"))
   silent! execute '!curl --create-dirs -fsSLo ~/.vim/autoload/plug.vim https://raw.fastgit.org/junegunn/vim-plug/master/plug.vim'
@@ -11,7 +14,6 @@ silent! if plug#begin()
   endif
   call plug#end()
 endif
-
 " =================================================================================================
 set number
 set tabstop=4
@@ -27,4 +29,4 @@ silent! colorscheme onedark
 let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#branch#enabled=1
-let g:airline_powerline_fonts=1 
+let g:airline_powerline_fonts=1
