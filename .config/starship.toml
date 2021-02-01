@@ -50,7 +50,6 @@ symbol = " "
 
 [nodejs]
 symbol = " "
-disabled = true
 
 [package]
 symbol = " "
