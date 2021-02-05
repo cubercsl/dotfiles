@@ -7,4 +7,6 @@ case Darwin
     set CONDA_ROOT /usr/local/anaconda3
 end
 
-eval $CONDA_ROOT/bin/conda "shell.fish" "hook" $argv | source
+if test -f $CONDA_ROOT/bin/conda
+    eval $CONDA_ROOT/bin/conda "shell.fish" "hook" $argv | source
+end
