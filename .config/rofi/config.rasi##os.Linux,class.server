@@ -4,4 +4,4 @@ configuration {
   show-icons:         true;
   icon-theme:         "Papirus";
 }
-@import "/usr/share/rofi/themes/Pop-Dark.rasi"
+@import "/usr/share/rofi/themes/lb.rasi"
