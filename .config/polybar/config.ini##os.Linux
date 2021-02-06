@@ -250,7 +250,8 @@ bottom = false
 border-bottom-size = 2
 border-bottom-color = ${color.primary}
 modules-left = title 
-modules-right = cpu_bar filesystem_bar memory_bar github
+modules-center = cpu_bar filesystem_bar memory_bar
+modules-right = github battery temperature keyboard
 padding = 2
 enable-ipc = true
 tray-position = right
@@ -260,9 +261,9 @@ inherit = bar/main
 bottom = true
 border-top-size = 2
 border-top-color = ${color.primary}
-modules-left = launcher workspaces
+modules-left = launcher i3 
 modules-center = mpd
-modules-right = updates battery wired-network wireless-network pulseaudio date sysmenu
+modules-right = updates wired-network wireless-network pulseaudio date sysmenu
 enable-ipc = true
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
