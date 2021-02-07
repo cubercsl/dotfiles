@@ -771,12 +771,10 @@ unknown-as-up = true
 ;   <label-connected> (default)
 ;   <ramp-signal>
 format-connected = <label-connected>
-format-connected-prefix = 
 
 ; Available tags:
 ;   <label-disconnected> (default)
 format-disconnected = <label-disconnected>
-format-disconnected-prefix = 
 
 ; Available tags:
 ;   <label-connected> (default)
@@ -831,10 +829,14 @@ ramp-signal-2 =
 [module/wireless-network]
 inherit = module/network
 interface = wlp1s0
+;;interface-type = wireless
+format-connected-prefix = 
+format-disconnected-prefix = 
 
 [module/wired-network]
 inherit = module/network
-interface = enp2s0
+interface = enp2s0 
+;;interface-type = wired
 format-connected-prefix = 
 format-disconnected-prefix = 
 

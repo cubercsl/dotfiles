@@ -8,15 +8,15 @@
  */
 
 configuration {
-	font:							"Iosevka Nerd Font 10";
+    font:							"Iosevka Nerd Font 10";
     show-icons:                     true;
-	icon-theme: 					"Papirus";
+    icon-theme: 					"Papirus";
     display-drun: 					"";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar: 				true;
+    sidebar-mode: 					false;
 }
 
 @import "colors.rasi"
@@ -25,10 +25,10 @@ window {
     transparency:                   "real";
     background-color:               @bg;
     text-color:                     @fg;
-	border:							0px 0px 2px 0px;
-	border-color:					@ac;
+    border:							0px 0px 2px 0px;
+    border-color:					@ac;
     border-radius:                  0px;
-	width:							350px;
+    width:							350px;
     location:                       center;
     x-offset:                       0;
     y-offset:                       0;
@@ -36,10 +36,10 @@ window {
 
 prompt {
     enabled: 						true;
-	padding: 						0px;
-	background-color: 				@al;
-	text-color: 					@bar;
-	font:							"feather 12";
+    padding: 						0px;
+    background-color: 				@al;
+    text-color: 					@bar;
+    font:							"feather 12";
 }
 
 entry {
@@ -54,13 +54,13 @@ entry {
 }
 
 inputbar {
-	children: 						[ prompt, entry ];
+    children: 						[ prompt, entry ];
     background-color:               @ac;
     text-color:                     @bar;
     expand:                         false;
-	border:							0px;
+    border:							0px;
     border-radius:                  0px;
-	border-color:					@ac;
+    border-color:					@ac;
     margin:                         0px;
     padding:                        12px;
 }
@@ -78,9 +78,9 @@ listview {
 
 mainbox {
     background-color:               @al;
-	border:							0px;
+    border:							0px;
     border-radius:                  0px;
-	border-color:					@ac;
+    border-color:					@ac;
     children:                       [ inputbar, listview ];
     spacing:                       	0px;
     padding:                        0px;
@@ -109,7 +109,7 @@ element-text {
 element selected {
     background-color:               @bga;
     text-color:                     @fg;
-	border:							0px 0px 0px 0px;
+    border:                         0px 0px 0px 0px;
     border-radius:                  0px;
-    border-color:                  	@ac;
+    border-color:                   @ac;
 }
