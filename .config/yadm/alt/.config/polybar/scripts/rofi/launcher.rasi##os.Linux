@@ -12,6 +12,9 @@ configuration {
     show-icons:                     true;
     icon-theme: 					"Papirus";
     display-drun: 					"";
+    display-ssh:                    "";
+    display-window:                 "";
+    display-run:                    "";
     drun-display-format:            "{name}";
     disable-history:                false;
     fullscreen:                     false;
