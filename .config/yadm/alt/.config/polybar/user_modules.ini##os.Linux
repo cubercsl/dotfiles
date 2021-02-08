@@ -112,27 +112,22 @@ content-padding = 1
 [module/term]
 inherit = module/apps
 content = 
-click-left = termite &
-click-middle = urxvt &
-click-right = xfce4-terminal &
+click-left = rofi-sensible-terminal &
 
 [module/files]
 inherit = module/apps
 content = 
-click-left = thunar &
-click-right = pcmanfm &
+click-left = pcmanfm &
 
 [module/browser]
 inherit = module/apps
 content = 
-click-left = firefox &
-click-right = chromium &
+click-left = google-chrome-stable &
 
 [module/settings]
 inherit = module/apps
 content = 
-click-left = xfce4-settings-manager &
-click-right = lxappearance &
+click-left = lxappearance &
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -206,11 +201,11 @@ expand-right = true
 menu-0-0 = Menu
 menu-0-0-exec = ~/.config/polybar/scripts/launcher.sh &
 menu-0-1 = Files
-menu-0-1-exec = thunar &
+menu-0-1-exec = pcmanfm &
 menu-0-2 = Terminal
-menu-0-2-exec = termite &
+menu-0-2-exec = rofi-sensible-terminal &
 menu-0-3 = Browser
-menu-0-3-exec = firefox &
+menu-0-3-exec = google-chrome-stable &
 
 ; Available tags:
 ;   <label-toggle> (default) - gets replaced with <label-(open|close)>

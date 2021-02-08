@@ -29,7 +29,7 @@
     # the top and down respectively.
     # The width can be negative.  In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "320x6-30+60"
+    geometry = "400x10-30+60"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -189,7 +189,7 @@
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = /usr/bin/dmenu -p 
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
@@ -284,7 +284,8 @@
     # On the US keyboard layout "grave" is normally above TAB and left
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
-    history = ctrl+grave
+    # history = ctrl+grave
+    history = ctrl+period
 
     # Context menu.
     context = ctrl+shift+period
@@ -292,7 +293,6 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    frame_color = "#7CB342"
     background = "#1F1F1F"
     foreground = "#FFFFFF"
     timeout = 5
@@ -300,7 +300,6 @@
     #icon = /path/to/icon
 
 [urgency_normal]
-    frame_color = "#039BE5"
     foreground = "#FFFFFF"
     background = "#1F1F1F"
     timeout = 10
@@ -308,7 +307,6 @@
     #icon = /path/to/icon
 
 [urgency_critical]
-    frame_color = "#E53935"
     foreground = "#FFFFFF"
     background = "#1F1F1F"
     timeout = 0
