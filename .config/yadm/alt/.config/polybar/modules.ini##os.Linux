@@ -539,14 +539,14 @@ ws-icon-default = 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
 ;   <label-mode> (default)
-format = <label-state>
+format = <label-state> <label-mode>
 
 ; Available tokens:
 ;   %mode%
 ; Default: %mode%
-;;label-mode = %mode%
-;;label-mode-padding = 2
-;;label-mode-background = #e60053
+label-mode = %mode%
+label-mode-foreground = ${color.foreground-alt}
+label-mode-padding = 2
 
 ; Available tokens:
 ;   %name%

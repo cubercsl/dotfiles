@@ -276,3 +276,4 @@ for_window [class="Blueman-*"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Snapper-gui"] floating enable
+for_window [class="Arandr"] floating enable
