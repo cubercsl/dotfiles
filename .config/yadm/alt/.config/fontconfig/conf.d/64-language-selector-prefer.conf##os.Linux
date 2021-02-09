@@ -11,6 +11,15 @@
     </prefer>
   </alias>
   <alias>
+    <family>serif</family>
+    <prefer>
+      <family>Noto Serif</family>
+      <family>Noto Serif CJK SC</family>
+      <family>Noto Serif CJK TC</family>
+      <family>Noto Serif CJK JP</family>
+    </prefer>
+  </alias>
+  <alias>
     <family>monospace</family>
     <prefer>
       <family>Noto Sans Mono</family>
