@@ -27,7 +27,7 @@ change_color() {
       fg:   #FFFFFFFF;
       ac:   ${AC}FF;
     }
-    EOF
+EOF
     
     polybar-msg cmd restart
 }
@@ -116,5 +116,5 @@ else
     --gray	--indigo	--light-blue	--light-green
     --lime	--orange	--pink		--purple
     --red	--teal		--yellow
-    _EOF_
+_EOF_
 fi

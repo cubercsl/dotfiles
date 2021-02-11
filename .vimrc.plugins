@@ -1,3 +1,4 @@
+Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'

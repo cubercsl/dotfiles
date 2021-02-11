@@ -161,15 +161,36 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 # bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
-# $i3-theme-window
-# class                   border  backgr. text    indicator child_border
-  client.focused          #0088CC #0088CC #ffffff #dddddd   #0088CC
-  client.focused_inactive #333333 #333333 #888888 #292d2e   #333333
-  client.unfocused        #333333 #333333 #888888 #292d2e   #333333
-  client.urgent           #2f343a #900000 #ffffff #900000   #900000
-  client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+## Base16 Nord
+# Author: arcticicestudio
+#
+# You can use these variables anywhere in the i3 configuration file.
 
-  client.background       #ffffff
+set $base00 #2E3440
+set $base01 #3B4252
+set $base02 #434C5E
+set $base03 #4C566A
+set $base04 #D8DEE9
+set $base05 #E5E9F0
+set $base06 #ECEFF4
+set $base07 #8FBCBB
+set $base08 #88C0D0
+set $base09 #81A1C1
+set $base0A #5E81AC
+set $base0B #BF616A
+set $base0C #D08770
+set $base0D #EBCB8B
+set $base0E #A3BE8C
+set $base0F #B48EAD
+
+# Property Name         Border  BG      Text    Indicator Child Border
+client.focused          $base02 $base02 $base06 $base0C $base02
+client.focused_inactive $base01 $base01 $base04 $base03 $base01
+client.unfocused        $base01 $base00 $base04 $base01 $base01
+client.urgent           $base08 $base08 $base00 $base08 $base08
+client.placeholder      $base00 $base00 $base06 $base00 $base00
+client.background       $base07
+
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
