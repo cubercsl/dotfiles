@@ -1,0 +1,9 @@
+ENVIRONMENTD="$HOME/.config/environment.d"
+set -a
+if [ -d "$ENVIRONMENTD" ]; then
+    for conf in $(ls "$ENVIRONMENTD"/*.conf)
+    do
+        . "$conf"
+    done
+fi
+set +a

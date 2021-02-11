@@ -117,7 +117,7 @@ click-left = rofi-sensible-terminal &
 [module/files]
 inherit = module/apps
 content = 
-click-left = pcmanfm &
+click-left = rofi-sensible-terminal -e ranger &
 
 [module/browser]
 inherit = module/apps
@@ -201,7 +201,7 @@ expand-right = true
 menu-0-0 = Menu
 menu-0-0-exec = ~/.config/polybar/scripts/launcher.sh &
 menu-0-1 = Files
-menu-0-1-exec = pcmanfm &
+menu-0-1-exec = rofi-sensible-terminal -e ranger &
 menu-0-2 = Terminal
 menu-0-2-exec = rofi-sensible-terminal &
 menu-0-3 = Browser
