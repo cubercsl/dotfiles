@@ -25,13 +25,8 @@ set laststatus=0
 set shortmess=F
 set noshowmode
 syntax on
-if has('unix')
-  silent! colorscheme nord
-  let g:airline_theme='nord'
-else
-  silent! colorscheme onedark
-  let g:airline_theme='onedark'
-endif
+silent! colorscheme nord
+let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts=1
