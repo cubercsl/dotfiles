@@ -48,7 +48,7 @@ monitor-strict = false
 
 ; Tell the Window Manager not to configure the window.
 ; Use this to detach the bar if your WM is locking its size/position.
-;override-redirect = false
+override-redirect = true
 
 ; Put the bar at the bottom of the screen
 bottom = true
@@ -60,8 +60,8 @@ fixed-center = true
 ; Dimension defined as pixel value (e.g. 35) or percentage (e.g. 50%),
 ; the percentage can optionally be extended with a pixel offset like so:
 ; 50%:-10, this will result in a width or height of 50% minus 10 pixels
-width = 100%
-height = 34
+;width = 98%
+height = 25
 
 ; Offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 ; the percentage can optionally be extended with a pixel offset like so:
@@ -130,9 +130,9 @@ module-margin-right = 2
 ;   font-3 = FontAwesome:size=10
 ; See the Fonts wiki page for more details
 
-font-0 = "Iosevka Nerd Font:size=10;3"
-font-1 = "feather:size=12;3"
-font-2 = "Noto Sans CJK SC:size=10;3"
+font-0 = "Iosevka Nerd Font:size=8;2"
+font-1 = "feather:size=10;2"
+font-2 = "Noto Sans CJK SC:size=8;2"
 ; Modules are added to one of the available blocks
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
@@ -199,7 +199,7 @@ tray-scale = 1.0
 ; Currently supported WM's:
 ;   bspwm
 ;   i3 (requires: `override-redirect = true`)
-;wm-restack = 
+wm-restack = i3
 
 ; Set a DPI values used when rendering text
 ; This only affects scalable fonts
@@ -246,24 +246,24 @@ cursor-scroll =
 
 [bar/top]
 inherit = bar/main
+width = 100%
 bottom = false
-border-bottom-size = 2
-border-bottom-color = ${color.primary}
 modules-left = title 
 modules-center = cpu_bar filesystem_bar memory_bar
-modules-right = github backlight battery temperature keyboard
+modules-right = backlight battery temperature keyboard
 padding = 2
 enable-ipc = true
 tray-position = right
 
 [bar/bottom]
 inherit = bar/main
+width = 98%
+offset-x = 1%
 bottom = true
-border-top-size = 2
-border-top-color = ${color.primary}
 modules-left = launcher term files browser settings i3 
 modules-center = mpd
-modules-right = updates wired-network wireless-network pulseaudio date sysmenu
+radius-top = 8.0
+modules-right = github updates wired-network wireless-network pulseaudio date sysmenu
 enable-ipc = true
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

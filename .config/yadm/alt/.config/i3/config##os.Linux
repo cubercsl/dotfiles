@@ -228,6 +228,9 @@ bindsym $mod+r mode "resize"
 gaps inner 14
 gaps outer -2
 
+gaps top 20
+gaps bottom 20
+
 # Window Config
 for_window [class="^.*"] border pixel 2
 new_window 1pixel

@@ -15,8 +15,8 @@
 background = #2E3440
 foreground = #ECEFF4
 foreground-alt = #8FBCBB
-module-fg =  
-primary = 
+module-fg = #3B4252
+primary = #D8DEE9 
 secondary = #88C0D0
 alternate = #616E88
 
