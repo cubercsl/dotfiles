@@ -1,5 +1,5 @@
 configuration {
-    font:                           "Iosevka Nerd Font 10", "Sans Serf 10"; 
+    font:                           "Iosevka Nerd Font 8", "Sans Serf 8"; 
     show-icons:                     true;
     icon-theme:                     "Papirus Dark";
     display-drun:                   "";

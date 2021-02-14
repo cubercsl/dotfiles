@@ -17,7 +17,7 @@ foreground = #ECEFF4
 foreground-alt = #8FBCBB
 module-fg = #3B4252
 primary = #D8DEE9 
-secondary = #88C0D0
+secondary = #BF616A
 alternate = #616E88
 
 ;; _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
