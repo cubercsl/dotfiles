@@ -48,6 +48,10 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5.0 #increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5.0 #decrease screen brightness
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
 bindsym XF86WLAN exec --no-startup-id ~/.config/i3/toggle_wifi
 
 # Use Mouse+$mod to drag floating windows to their wanted position
