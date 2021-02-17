@@ -13,6 +13,7 @@ rounded-corners-exclude = [
   "class_g = 'Polybar'",
   "class_g = 'fcitx'",
   "class_g = 'Dunst'",
+  "class_g = 'Rofi'",
   #"class_g = 'code-oss'",
   #"class_g = 'TelegramDesktop'",
   #"class_g = 'firefox'",
@@ -487,6 +488,7 @@ wintypes:
   tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
   dock = { shadow = false; }
   dnd = { shadow = false; }
+  utility = { shadow = false; }
   popup_menu = { opacity = 1.0; fade = false; }
   dropdown_menu = { opacity = 1.0; fase = false; }
 };

@@ -285,7 +285,7 @@
     # of "1". Make sure this key actually exists on your keyboard layout,
     # e.g. check output of 'xmodmap -pke'
     # history = ctrl+grave
-    history = ctrl+period
+    history = ctrl+shift+comma
 
     # Context menu.
     context = ctrl+shift+period

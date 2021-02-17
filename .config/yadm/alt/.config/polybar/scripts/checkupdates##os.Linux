@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/bash -e
 #
 #   checkupdates: Safely print a list of pending updates.
 #
@@ -113,5 +113,4 @@ fi
 pacman -Qu --dbpath "$CHECKUPDATES_DB" 2> /dev/null | grep -v '\[.*\]'
 
 exit 0
-
 # vim: set noet:

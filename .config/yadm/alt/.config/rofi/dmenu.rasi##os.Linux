@@ -1,5 +1,5 @@
 configuration {
-    font:                           "Iosevka Nerd Font 8", "Sans Serf 8"; 
+    font:                           "Iosevka Nerd Font 14", "Sans Serf 14"; 
     show-icons:                     true;
     icon-theme:                     "Papirus Dark";
     display-drun:                   "";
@@ -20,10 +20,12 @@ configuration {
 }
 
 window {
-    anchor:     north;
-    location:   north;
-    width:      100%;
-    padding:    4px;
+    anchor:         north;
+    location:       north;
+    width:          100%;
+    padding:        4px;
+    border:         0px 0px 2px 0px;
+    border-color:   @ac;
     children:   [ horibox ];
 }
 

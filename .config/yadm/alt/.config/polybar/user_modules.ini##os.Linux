@@ -122,7 +122,7 @@ click-left = rofi-sensible-terminal -e ranger &
 [module/browser]
 inherit = module/apps
 content = 
-click-left = google-chrome-stable &
+click-left = firefox &
 
 [module/settings]
 inherit = module/apps
@@ -205,7 +205,7 @@ menu-0-1-exec = rofi-sensible-terminal -e ranger &
 menu-0-2 = Terminal
 menu-0-2-exec = rofi-sensible-terminal &
 menu-0-3 = Browser
-menu-0-3-exec = google-chrome-stable &
+menu-0-3-exec = firefox &
 
 ; Available tags:
 ;   <label-toggle> (default) - gets replaced with <label-(open|close)>
