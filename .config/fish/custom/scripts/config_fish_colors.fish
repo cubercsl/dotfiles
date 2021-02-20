@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 # Theme-aware Fish shell color config
 # Tested with iTerm2 Snazzy theme (https://github.com/sindresorhus/iterm2-snazzy)
 
