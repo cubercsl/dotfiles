@@ -4,3 +4,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wakatime/vim-wakatime'
+if has('unix')
+    Plug 'lilydjwg/fcitx.vim', { 'branch': 'fcitx5-server'}
+endif

@@ -1,0 +1,24 @@
+patch:
+  engine/processors:
+    # - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  punctuator/half_shape:
+    '<' : '《'
+    '>' :  '》'
+    '/': '、'
+    '\': '、'
+    '|': '|'
+    '~': '~'
+    '%' : '%'
+    '$' : '￥'
+    '*' : '*'
+    '[' : '【'
+    ']' : '】' 
+    '{' : '｛'
+    '}' : '｝'

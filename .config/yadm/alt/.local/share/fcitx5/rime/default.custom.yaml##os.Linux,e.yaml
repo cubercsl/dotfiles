@@ -1,0 +1,10 @@
+# Rime default settings
+# encoding: utf-8
+
+patch:
+  schema_list:
+    - schema: flypy
+
+  switcher/hotkeys:
+    - F4
+    
