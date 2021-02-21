@@ -1,0 +1,10 @@
+[Unit]
+Description=fcitx status for fcitx.vim plugin
+
+[Service]
+Type=simple
+StandardOutput=null
+ExecStart=/home/cubercsl/.vim/plugged/fcitx.vim/fcitx-status
+
+[Install]
+WantedBy=default.target
