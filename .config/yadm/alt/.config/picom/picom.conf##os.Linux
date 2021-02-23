@@ -490,5 +490,5 @@ wintypes:
   dnd = { shadow = false; }
   utility = { shadow = false; }
   popup_menu = { opacity = 1.0; fade = false; }
-  dropdown_menu = { opacity = 1.0; fase = false; }
+  dropdown_menu = { opacity = 1.0; fade = false; }
 };
