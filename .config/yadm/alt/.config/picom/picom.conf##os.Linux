@@ -117,7 +117,7 @@ shadow-exclude = [
 # Fade windows in/out when opening/closing and when opacity changes,
 #  unless no-fading-openclose is used.
 # fading = false
-fading = false;
+fading = true;
 
 # Opacity change between steps while fading in. (0.01 - 1.0, defaults to 0.028)
 # fade-in-step = 0.028
@@ -484,7 +484,7 @@ log-level = "info";
 #
 wintypes:
 {
-  normal = { fade = false; shadow = false; }
+  normal = { shadow = false; }
   tooltip = { fade = true; shadow = true; opacity = 0.75; focus = true; full-shadow = false; };
   dock = { shadow = false; }
   dnd = { shadow = false; }
