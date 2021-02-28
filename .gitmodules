@@ -1,0 +1,3 @@
+[submodule ".config/yadm/alt/.tmux"]
+	path = .config/yadm/alt/.tmux
+	url = https://github.com/gpakosz/.tmux.git
