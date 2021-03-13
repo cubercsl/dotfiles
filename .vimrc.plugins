@@ -1,6 +1,7 @@
 Plug 'arcticicestudio/nord-vim'
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wakatime/vim-wakatime'

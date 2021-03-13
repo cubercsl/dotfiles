@@ -20,11 +20,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
-set mouse=a
-set laststatus=0
 set shortmess=F
 set noshowmode
-syntax on
 silent! colorscheme nord
 let g:airline_theme='nord'
 let g:airline#extensions#tabline#enabled=1
