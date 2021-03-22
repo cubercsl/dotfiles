@@ -1,5 +1,9 @@
 unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
 " =================================================================================================
 " download vim-plug if missing
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -15,11 +19,6 @@ silent! if plug#begin()
   call plug#end()
 endif
 " =================================================================================================
-set number
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 set shortmess=F
 set noshowmode
 silent! colorscheme nord
