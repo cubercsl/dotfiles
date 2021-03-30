@@ -3,6 +3,6 @@ function fish_title
     if not set -q INSIDE_EMACS
         set realhome ~
         set -l tmp (string replace -r '^'"$realhome"'($|/)' '~$1' $PWD)
-        echo (whoami)@(prompt_hostname): $tmp
+        echo (whoami)@(prompt_hostname):$tmp
     end
 end

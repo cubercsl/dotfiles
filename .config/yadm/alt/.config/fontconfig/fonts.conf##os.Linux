@@ -17,14 +17,14 @@
     </edit>
   </match>
   <match target="font">
-	<edit name="matrix">
-		<times>
-          <name>matrix</name>
-          <matrix>
-            <double>1</double><double>0</double>
-            <double>0</double><double>0.96</double>
-          </matrix>
-        </times>
+    <edit name="matrix">
+      <times>
+        <name>matrix</name>
+        <matrix>
+          <double>1</double><double>0</double>
+          <double>0</double><double>0.96</double>
+        </matrix>
+      </times>
     </edit>
-  </match>
+    </match>
 </fontconfig>
