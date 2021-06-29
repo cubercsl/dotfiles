@@ -2,5 +2,5 @@ jorgebucaran/fisher
 jorgebucaran/autopair.fish
 ~/.config/fish/custom
 {% if yadm.os == "Darwin" %}
-kidonng/fish-proxy
+cubercsl/proxy.fish
 {% endif %}
