@@ -21,8 +21,8 @@ endif
 " =================================================================================================
 set shortmess=F
 set noshowmode
-silent! colorscheme nord
-let g:airline_theme='nord'
+silent! colorscheme dracula
+let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts=1
