@@ -19,8 +19,9 @@ silent! if plug#begin()
   call plug#end()
 endif
 " =================================================================================================
-if has('mac')
-    let g:dracula_italic = 0
+"For MacOS default vim
+if !has('termguicolors')
+  let g:dracula_italic = 0
 endif
 
 set shortmess=F
