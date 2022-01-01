@@ -1,3 +1,4 @@
+test -n "$SSH_CONNECTION" && exit
 set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 switch (uname)
 case Linux
