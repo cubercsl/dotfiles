@@ -94,27 +94,6 @@ zstyle :bracketed-paste-magic paste-finish pastefinish
 # https://github.com/zsh-users/zsh-autosuggestions/issues/351
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(bracketed-paste accept-line)
 
-_ZSH_PLUGINS="/usr/share/zsh/plugins"
-
-_plugins=(
-    zsh-autosuggestions
-    zsh-history-substring-search
-    zsh-syntax-highlighting
-)
-for _zsh_plugin in $_plugins[@]; do
-    for file (
-        $_ZSH_PLUGINS/$_zsh_plugin/$_zsh_plugin.zsh
-        /usr/local/share/$_zsh_plugin/$_zsh_plugin.zsh  # macos homebrew
-    ); do
-        if [[ -r "$file" ]]; then
-            source "$file"
-            break
-        fi
-    done
-    unset file
-done
-unset _zsh_plugin
-
 # https://github.com/zsh-users/zsh-history-substring-search#usage
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up

@@ -21,9 +21,9 @@ ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
 _load_profiles=(
     check
     config
-    plugin
     alias
     completion
+    plugin
 )
 
 for file in ${_load_profiles[@]}; do
