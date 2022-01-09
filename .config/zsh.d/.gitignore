@@ -1,0 +1,11 @@
+# ZshCache
+/zcache/*
+!/zcache/.gitkeep
+
+# ZshHistory
+/zhistory/zsh_history
+/zhistory/zlua
+
+# Zsh Pre Compile
+*.zwc
+\.zcompdump

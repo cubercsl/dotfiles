@@ -29,6 +29,7 @@ if !has('termguicolors') || exists('$TMUX')
   let g:dracula_italic = 0
 endif
 
+set mouse=a
 set number
 set tabstop=4
 set shiftwidth=4
