@@ -25,7 +25,7 @@ if exists('+termguicolors')
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
-if !has('termguicolors') || exists('$TMUX')
+if !has('termguicolors')
   let g:dracula_italic = 0
 endif
 
