@@ -4,7 +4,6 @@ _enabled_plugins=(
     gnu-utils
     gpg-agent
     pyenv
-    tmux
     zsh-autosuggestions
     zsh-history-substring-search
     zsh-syntax-highlighting
