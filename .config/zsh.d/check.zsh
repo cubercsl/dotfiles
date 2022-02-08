@@ -8,9 +8,9 @@
 zmodload zsh/regex 2>/dev/null && _has_re=1 || _has_re=0
 
 # https://askubuntu.com/questions/432255/what-is-the-display-environment-variable
-[[ -z $DISPLAY ]] && _in_x11=1 || _in_x11=0
+[[ -z $DISPLAY ]] && _in_x11=0 || _in_x11=1
 # https://discourse.ubuntu.com/t/environment-variables-for-wayland-hackers/12750
-[[ -z $WAYLAND_DISPLAY ]] && _in_wayland=1 || _in_wayland=0
+[[ -z $WAYLAND_DISPLAY ]] && _in_wayland=0 || _in_wayland=1
 (( $_in_x11 ==1 )) || (( $_in_wayland ==1 )) && _in_gui=1 || _in_gui=0
 
 if (( $+commands[tty] )); then
@@ -22,8 +22,8 @@ elif (( $+TERM == 1 )); then
     [[ x$TERM == xlinux ]] && _in_linux_tty=1 || _in_linux_tty=0
 fi
 
-_is_ssh=false
+_is_ssh=0
 if [ -n "$SSH_CLIENT" ]  || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
-  _is_ssh=true
+  _is_ssh=1
 fi
 # vim: ft=zsh sw=4 ts=8 sts=4 et:
