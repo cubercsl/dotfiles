@@ -22,4 +22,8 @@ elif (( $+TERM == 1 )); then
     [[ x$TERM == xlinux ]] && _in_linux_tty=1 || _in_linux_tty=0
 fi
 
+_is_ssh=false
+if [ -n "$SSH_CLIENT" ]  || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
+  _is_ssh=true
+fi
 # vim: ft=zsh sw=4 ts=8 sts=4 et:

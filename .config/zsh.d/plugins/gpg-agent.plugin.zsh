@@ -8,6 +8,7 @@ function _gpg-agent_update-tty_preexec {
 autoload -U add-zsh-hook
 add-zsh-hook preexec _gpg-agent_update-tty_preexec
 
+[[ "$_is_ssh" = true ]] && return
 # If enable-ssh-support is set, fix ssh agent integration
 if [[ $(gpgconf --list-options gpg-agent | awk -F: '$1=="enable-ssh-support" {print $10}') = 1 ]]; then
   unset SSH_AGENT_PID
