@@ -42,8 +42,3 @@ let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts=1
-
-"Use system wakatime
-if filereadable('/usr/bin/wakatime')
-  let g:wakatime_CLIPath='/usr/bin/wakatime'
-endif
