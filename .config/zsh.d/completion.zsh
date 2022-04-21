@@ -29,7 +29,7 @@ unset _comp_files
 # 禁用旧补全系统
 zstyle ':completion:*' use-compctl false
 function compctl() {
-    print -P "\n%F{red}Don't use compctl anymore%f"
+    # print -P "\n%F{red}Don't use compctl anymore%f"
 }
 
 # Execute code in the background to not affect the current session

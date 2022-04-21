@@ -21,7 +21,7 @@ zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*:hosts-domain' ign
     '*.github*' 'github.com' 'aur.archlinux.org'
 zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.<->.<->' '255.255.255.255' '::1' 'fe80::*'
 zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*:users' ignored-patterns \
-    adm amule amanda apache avahi bin brltty chrony colord courier cups clamav \
+    adm amule amanda apache avahi bin brltty caddy chrony colord courier cups clamav \
     daemon dbus deluge distcache dnsmasq dovecot fax fetchmail flatpak ftp \
     games gdm geoclue gluster gopher grafana http knot lidarr ldap lp \
     mail mailman mailnull mongodb mpd mysql named netdump news nfsnobody \
@@ -30,5 +30,5 @@ zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*:users' ignored-pa
     quagga radvd redis rpc rpcuser rpm rtkit shutdown squid sshd sync saned \
     sddm shadowsocks-rust sonarr systemd-coredump systemd-journal-remote \
     systemd-network systemd-oom systemd-resolve systemd-timesync \
-    transmission tss usbmux uuidd uucp vcsa v2ray xfs
+    transmission tss usbmux uuidd uucp vcsa v2ray xfs _*
 
