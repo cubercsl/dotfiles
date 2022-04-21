@@ -1,6 +1,9 @@
-setopt nomatch
+unsetopt nomatch
+# https://blog.lilydjwg.me/2015/7/26/a-simple-zsh-module.116403.html
+# https://gist.github.com/lilydjwg/0bfa6807b88e6d39a995
 zmodload zsh/subreap 2>/dev/null && subreap
 autoload -Uz is-at-least
+unsetopt beep
 # 自动记住已访问目录栈
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -14,23 +17,32 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 # 在命令前添加空格，不将此命令添加到记录文件中
 setopt hist_ignore_space
-#为历史纪录中的命令添加时间戳
+# 为历史纪录中的命令添加时间戳
 setopt extended_history
-#允许在交互模式中使用注释  例如：
+# 展开历史时不执行
+setopt hist_verify
+# 实例之间即时共享历史
+# setopt share_history
+# 使用 fc -IR 读取历史  fc -IA 保存历史
+# 允许在交互模式中使用注释  例如：
 #cmd #这是注释
 setopt interactive_comments
-#扩展路径
-#/v/c/p/p => /var/cache/pacman/pkg
-setopt complete_in_word
-# 补全列表不同列可以使用不同的列宽
-setopt listpacked
-# 补全 identifier=path 形式的参数
-setopt magic_equal_subst
 # setopt 的输出显示选项的开关状态
 setopt ksh_option_print
 # disown 后自动继续进程
 setopt auto_continue
+# 启用增强 glob
 setopt extended_glob
+# using c format hexadecimal number
+setopt c_bases
+# disable for problems with parsing of, for example, date and time strings with leading zeroes
+unsetopt octal_zeroes
+# RPROMPT 执行完命令后就消除, 便于复制
+setopt transient_rprompt
+# prompt more dynamic, allow function in prompt
+setopt prompt_subst
+# 单引号中的 '' 表示一个 ' （如同 Vimscript 中者）
+setopt rc_quotes
 
 # Disable tty flow control, allows vim to use '<Ctrl>S'
 unsetopt flow_control && stty -ixon
@@ -57,18 +69,38 @@ function set-xterm-terminal-title () {
     printf '\e]2;%s\a' "$@"
 }
 
-function precmd-set-terminal-title () {
-    set-xterm-terminal-title "${(%):-"%n@%m: %~"}"
-}
+case ${TERM} in
+    xterm*|rxvt*|Eterm|aterm|kterm|gnome*|konsole*)
+        function precmd-set-terminal-title () {
+            #set-xterm-terminal-title "${(%):-"%n@%m: %~"}"
+            printf "\e]2;%s@%s: %s\a" "${USER}" "${HOST%%.*}" "${(D)PWD}"
+        }
+        function preexec-set-terminal-title () {
+            #set-xterm-terminal-title "${(%):-"%n@%m: "}$2"
+            printf "\e]2;%s@%s: %s\a" "${USER}" "${HOST%%.*}" "$2"
+        }
+        ;;
+    screen*|tmux*)
+        function precmd-set-terminal-title () {
+            printf "\033_%s@%s: %s\033\\" "${USER}" "${HOST%%.*}" "${(D)PWD}"
+        }
+        function preexec-set-terminal-title () {
+            printf "\033_%s@%s: %s\033\\" "${USER}" "${HOST%%.*}" "$2"
+        }
+        ;;
+    *)
+        function precmd-set-terminal-title () {
+            set-xterm-terminal-title "${(%):-"%n@%m: %~"}"
+        }
 
-# function preexec-set-terminal-title () {
-#     set-xterm-terminal-title "${(%):-"%n@%m: "}$2"
-# }
+        function preexec-set-terminal-title () {
+            set-xterm-terminal-title "${(%):-"%n@%m: "}$2"
+        }
+        ;;
+esac
 
-if [[ "$TERM" == (screen*|xterm*|rxvt*|tmux*|putty*|konsole*|gnome*) ]]; then
-    add-zsh-hook -Uz precmd precmd-set-terminal-title
-    # add-zsh-hook -Uz preexec preexec-set-terminal-title
-fi
+add-zsh-hook -Uz precmd precmd-set-terminal-title
+#add-zsh-hook -Uz preexec preexec-set-terminal-title
 
 if is-at-least 5.1; then
     # https://archive.zhimingwang.org/blog/2015-09-21-zsh-51-and-bracketed-paste.html
