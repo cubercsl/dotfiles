@@ -14,8 +14,8 @@ endif
 
 " declare plugins
 silent! if plug#begin()
-  if filereadable(expand("~/.vimrc.plugins"))
-    source ~/.vimrc.plugins
+  if filereadable(expand("~/.vim/plugins.vim"))
+    source ~/.vim/plugins.vim
   endif
   call plug#end()
 endif
