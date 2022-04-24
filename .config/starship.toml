@@ -1,5 +1,13 @@
 [aws]
 symbol = " "
+style = "bold #ffb86c"
+
+[character]
+error_symbol = "[λ](bold #ff5555)"
+success_symbol = "[λ](bold #50fa7b)"
+
+[cmd_duration]
+style = "bold #f1fa8c"
 
 [conda]
 symbol = " "
@@ -11,6 +19,7 @@ symbol = " "
 [directory]
 read_only = " "
 fish_style_pwd_dir_length = 1
+style = "bold #ffb86c"
 
 [docker_context]
 symbol = " "
@@ -23,6 +32,13 @@ symbol = " "
 
 [git_branch]
 symbol = " "
+style = "bold #ffb86c"
+
+[git_status]
+style = "bold #ff5555"
+
+[hostname]
+style = "bold #bd93f9"
 
 [golang]
 symbol = " "
@@ -68,3 +84,7 @@ symbol = " "
 
 [swift]
 symbol = "ﯣ "
+
+[username]
+format = "[$user]($style) on "
+style_user = "bold #8be9fd"
