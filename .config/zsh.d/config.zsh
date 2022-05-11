@@ -128,6 +128,9 @@ colors
 # Basic LS_COLORS
 (( $_in_gui == 1 )) || [[ -n $ANDROID_ROOT ]] || eval "$(dircolors -b)"
 
+# Extended LS_COLORS
+(( $_in_gui == 1 )) && eval "$(dircolors -b $ZDOTDIR/LS_COLORS)"
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key

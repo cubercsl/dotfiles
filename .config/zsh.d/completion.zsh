@@ -111,7 +111,7 @@ zstyle ':completion:*' auto-description '%F{green}Specify: %d%f'
 ###  Color setting
 # I use http://jafrog.com/2013/11/23/colors-in-terminal.html to get color code
 # colorfull completion list
-eval $(dircolors -b)
+# eval $(dircolors -b)
 export ZLSCOLORS="${LS_COLORS}"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
