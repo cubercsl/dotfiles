@@ -1,7 +1,7 @@
 # reload zsh
 alias reload="sync && source $HOME/.zshrc && rehash"
 
-(( $+commands[lsd] )) && alias ls='lsd'
+(( $+commands[lsd] )) && alias ls='lsd' || alias ls='ls --color=auto'
 alias l='ls -al'         # Lists in one column, hidden files.
 alias ll='ls -lh'        # Lists human readable sizes.
 alias lr='ll -R'         # Lists human readable sizes, recursively.
