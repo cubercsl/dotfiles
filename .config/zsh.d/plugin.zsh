@@ -14,6 +14,7 @@ for _zsh_plugin in $_enabled_plugins[@]; do
     for file (
         $ZDOTDIR/plugins/$_zsh_plugin.plugin.zsh
         /usr/local/share/$_zsh_plugin/$_zsh_plugin.zsh  # macos homebrew
+        /usr/share/$_zsh_plugin/$_zsh_plugin.zsh        # debian 
         $_ZSH_PLUGINS/$_zsh_plugin/$_zsh_plugin.zsh
     ); do
         if [[ -r "$file" ]]; then
