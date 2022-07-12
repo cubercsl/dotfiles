@@ -16,8 +16,6 @@ alias lt='ll -tr'        # Lists sorted by date, most recent last.
 # bat using noexpandtab
 (( $+commands[bat] )) && export BAT_OPTS="--tabs 0"
 
-alias ..="cd .."
-
 # add progress
 alias dd='dd status=progress'
 alias mv='mv -v'

@@ -172,4 +172,15 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
+# An offline tool for querying IP geographic information and CDN provider.
+# https://github.com/zu1k/nali
+(( $+commands[nali] )) && {
+    (( $+commands[dig] ))        && function dig()        { command dig $@ | nali }
+    (( $+commands[dog] ))        && function dog()        { command dog $@ | nali }
+    (( $+commands[nslookup] ))   && function nslookup()   { command nslookup $@ | nali }
+    (( $+commands[ping] ))       && function ping()       { command ping $@ | nali }
+    (( $+commands[tracepath] ))  && function tracepath()  { command tracepath $@ | nali }
+    (( $+commands[traceroute] )) && function traceroute() { command traceroute $@ | nali }
+}
+
 # vim: ft=zsh sw=4 ts=8 sts=4 et:
