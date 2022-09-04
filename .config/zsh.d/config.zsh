@@ -121,6 +121,6 @@ colors
 (( $_in_gui == 1 )) || [[ -n $ANDROID_ROOT ]] || eval "$(dircolors -b)"
 
 # Extended LS_COLORS
-(( $_in_gui == 1 )) && eval "$(dircolors -b $ZDOTDIR/LS_COLORS)"
+eval "$(dircolors -b $ZDOTDIR/LS_COLORS)"
 
 # vim: ft=zsh sw=4 ts=8 sts=4 et:
