@@ -18,9 +18,6 @@ alias lt='ll -tr'        # Lists sorted by date, most recent last.
 alias lc='lt -c'         # Lists sorted by date, most recent last, shows change time.
 alias lu='lt -u'         # Lists sorted by date, most recent last, shows access time.
 
-# bat using noexpandtab
-(( $+commands[bat] )) && export BAT_OPTS="--tabs 0"
-
 # add progress
 alias dd='dd status=progress'
 alias mv='mv -v'

@@ -29,7 +29,7 @@ unset _comp_files
 # 禁用旧补全系统
 zstyle ':completion:*' use-compctl false
 function compctl() {
-    # print -P "\n%F{red}Don't use compctl anymore%f"
+    _cfg_error "Don't use compctl anymore"
 }
 
 # Execute code in the background to not affect the current session
@@ -58,7 +58,7 @@ _comp_options+=(globdots)
 
 # Some functions, like _apt and _dpkg, are very slow. We can use a cache in
 # order to speed things up
-zstyle ':completion:*' use-cache yes 
+zstyle ':completion:*' use-cache yes
 _cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcache
 zstyle ':completion:*' cache-path $_cache_dir
 unset _cache_dir
@@ -108,11 +108,6 @@ zstyle ':completion:*:corrections' format '%F{yellow}%B -- %d (errors: %e) --%b%
 # Description for options that are not described by the completion functions, but that have exactly one argument
 zstyle ':completion:*' auto-description '%F{green}Specify: %d%f'
 
-###  Color setting
-# I use http://jafrog.com/2013/11/23/colors-in-terminal.html to get color code
-# colorfull completion list
-# eval $(dircolors -b)
-export ZLSCOLORS="${LS_COLORS}"
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 #错误校正
@@ -162,7 +157,6 @@ zstyle ':completion:*:processes-names' command 'ps c -u ${USER} -o command | uni
 # ignore-parents after cd ..
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
-
 # By default, the completion doesn't allow option-stacking, meaning if you try to complete docker run -it <TAB> it won't work, because you're stacking the -i and -t options.
 zstyle ':completion:*:*:docker:*'   option-stacking yes
 zstyle ':completion:*:*:docker-*:*' option-stacking yes
@@ -173,13 +167,6 @@ zstyle ':completion:*:*:git*:*' use-fallback false
 # complete manual by their section, from grml
 zstyle ':completion:*:manuals'    separate-sections true
 zstyle ':completion:*:manuals.*'  insert-sections   true
-
-# 在 .. 后不要回到当前目录
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-
-# 允许 docker 补全时识别 -it 之类的组合命令
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
 
 # fg/bg 补全时使用 jobs id
 zstyle ':completion:*:jobs' verbose true

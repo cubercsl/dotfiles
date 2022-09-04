@@ -1,25 +1,54 @@
-[aws]
-symbol = " "
-style = "bold #ffb86c"
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$all\
+$line_break\
+$character"""
+
+right_format="$status"
+
+continuation_prompt = "[>>>](bold yellow) "
 
 [character]
-error_symbol = "[λ](bold #ff5555)"
-success_symbol = "[λ](bold #50fa7b)"
+success_symbol = "[>>>](bold green)"
+error_symbol = "[>>>](bold red)"
+vicmd_symbol = "[<<<](bold green)"
 
-[cmd_duration]
-style = "bold #f1fa8c"
+[status]
+disabled = false
+style = "bold blue"
+format = "[$symbol [->](white) [$common_meaning$signal_name](red) $hex_status]($style) "
+symbol = "[X](red)"
+success_symbol = "[!](green)"
+pipestatus = true
+pipestatus_format = "\\[ $pipestatus\\] => [$symbol [->](white) [$common_meaning$signal_name](red) $hex_status]($style)"
+pipestatus_separator = "| "
+
+# starship preset nerd-font-symbols
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [conda]
 symbol = " "
-ignore_base = false
 
 [dart]
 symbol = " "
 
 [directory]
 read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+# using fish style path truncation
 fish_style_pwd_dir_length = 1
-style = "bold #ffb86c"
+# using logical path insetad of resolving symbol link
+use_logical_path = true
 
 [docker_context]
 symbol = " "
@@ -32,16 +61,12 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-style = "bold #ffb86c"
-
-[git_status]
-style = "bold #ff5555"
-
-[hostname]
-style = "bold #bd93f9"
 
 [golang]
 symbol = " "
+
+[haskell]
+symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -61,30 +86,17 @@ symbol = " "
 [nix_shell]
 symbol = " "
 
+[nodejs]
+symbol = " "
+
 [package]
 symbol = " "
 
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
 [python]
-symbol = " "
+symbol = " "
 
-[ruby]
-symbol = " "
+[spack]
+symbol = "🅢 "
 
 [rust]
 symbol = " "
-
-[scala]
-symbol = " "
-
-[swift]
-symbol = "ﯣ "
-
-[username]
-format = "[$user]($style) on "
-style_user = "bold #8be9fd"
