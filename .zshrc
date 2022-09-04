@@ -1,11 +1,16 @@
 ## .zshrc
 
-OS=${$(uname)%_*}
-if [[ $OS == "CYGWIN" || $OS == "MSYS" ]]; then
-    OS=Linux
-elif [[ $OS == "Darwin" ]]; then
-    OS=FreeBSD
-fi
+_cfg_info() {
+    print -P "%F{green}[INFO]%f $1"
+}
+
+_cfg_warning() {
+    print -P "%F{yellow}[WARN]%f $1"
+}
+
+_cfg_error() {
+    print -P "%F{red}[ERROR]%f $1"
+}
 
 _zhist=$XDG_CONFIG_HOME/zsh.d/zhistory
 
@@ -14,22 +19,24 @@ export _ZL_DATA=${_zhist}/zlua
 
 HISTSIZE=100000
 SAVEHIST=100000
+ZDOTDIR="$XDG_CONFIG_HOME/zsh.d"
+ZSH_CACHE_HOME="$XDG_CACHE_HOME/zsh"
+ZSH_COMPDUMP="$ZSH_CACHE_HOME/zcompdump"
 
-ZDOTDIR=$XDG_CONFIG_HOME/zsh.d
-ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump"
-
-_load_profiles=(
+_profiles=(
     check
     config
     alias
     completion
+    keybind
     plugin
 )
 
-for file in ${_load_profiles[@]}; do
-    [[ ! -r "$ZDOTDIR/$file.zsh" ]] || source "$ZDOTDIR/$file.zsh"
+for _profile in ${_profiles[@]}; do
+    [[ -r "$ZDOTDIR/$_profile.zsh" ]] && source "$ZDOTDIR/$_profile.zsh" ||\
+        _cfg_warning "Can not found $_profile.zsh." 
 done
-unset file
+unset _profile
 
 if command -v starship 2>&1 >/dev/null; then
     eval "$(starship init zsh)"

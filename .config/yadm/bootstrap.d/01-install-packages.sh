@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eu
 
 echo "Install Packages"
 packages_file="$(dirname ${BASH_SOURCE[0]})/packages.conf"

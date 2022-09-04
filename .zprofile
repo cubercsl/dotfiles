@@ -23,18 +23,17 @@ path=(
 
 typeset -U fpath
 fpath=(
-    $XDG_CONFIG_HOME/zsh.d/completions(N-/)
-    /usr/local/share/zsh-completions    # macos
+    $ZDOTDIR/completions(N-/)
+    $ZDOTDIR/functions(N-/)
+    /usr{/local,}/share/zsh/{site-functions,vendor-completions}(-/N)
     $fpath
 )
 
 typeset -U manpath
 manpath=(
     $HOME/.local/share/man(N-/)
-    $XDG_DATA_HOME/man(N-/)
-    /usr/local/share/man(N-/)
-    /usr/share/man(N-/)
     $manpath
+    /usr/{local,}/share/man(N-/)
 )
 
 # vim: ft=zsh sw=4 ts=8 sts=4 et:

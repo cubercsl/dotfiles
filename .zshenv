@@ -11,4 +11,6 @@ export SYSTEMD_EDITOR=$EDITOR
 export PAGER='less'
 export BROWSER=/usr/bin/xdg-open
 
+export NALI_HOME="$XDG_CONFIG_HOME"/nali
+
 # vim: ft=zsh sw=4 ts=8 sts=4 et
