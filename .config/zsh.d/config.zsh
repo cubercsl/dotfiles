@@ -54,13 +54,8 @@ tabs -4
 autoload -Uz zmv
 autoload -Uz zargs
 
-bindkey -e
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey "^x^e" edit-command-line
-
 # set end of file mark
-export PROMPT_EOL_MARK="⏎"
+PROMPT_EOL_MARK="%B%F{black}⏎"
 
 # Terminal Title
 autoload -Uz add-zsh-hook
@@ -107,9 +102,6 @@ if is-at-least 5.1; then
     autoload -Uz bracketed-paste-url-magic
     zle -N bracketed-paste bracketed-paste-url-magic
 fi
-
-# better than copy-prev-word
-bindkey "^[^_" copy-prev-shell-word
 
 autoload -Uz colors zsh/terminfo
 colors

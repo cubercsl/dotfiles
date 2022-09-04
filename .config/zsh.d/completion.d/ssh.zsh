@@ -21,3 +21,5 @@ zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*:hosts-domain' ign
     '*.github*' 'github.com' 'aur.archlinux.org'
 zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.<->.<->' '255.255.255.255' '::1' 'fe80::*'
 zstyle ':completion:*:(ssh|scp|rsync|sshfs|mosh|copy-gpg-db):*' users root git $USER
+
+# vim: ft=zsh sw=4 ts=8 sts=4 et:

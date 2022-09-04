@@ -25,22 +25,19 @@ ZSH_COMPDUMP="$ZSH_CACHE_HOME/zcompdump"
 
 _profiles=(
     check
+    prompt
     config
+    keybind
     alias
     completion
-    keybind
     plugin
 )
 
 for _profile in ${_profiles[@]}; do
     [[ -r "$ZDOTDIR/$_profile.zsh" ]] && source "$ZDOTDIR/$_profile.zsh" ||\
-        _cfg_warning "Can not found $_profile.zsh." 
+        _cfg_warning "Can not load \"$_profile.zsh\"."
 done
 unset _profile
-
-if command -v starship 2>&1 >/dev/null; then
-    eval "$(starship init zsh)"
-fi
 
 # Load user config.
 if [[ -f ~/.zshrc.local ]]; then

@@ -4,6 +4,7 @@
 # $_in_wayland   : check whether in Wayland
 # $_in_gui       : check whether in GUI
 # $_in_linux_tty : check whether in Linux tty (only support ASCII and 16 colors)
+# $_in_ssh       : check whether in SSH session
 
 zmodload zsh/regex 2>/dev/null && _has_re=1 || _has_re=0
 
@@ -22,8 +23,8 @@ elif (( $+TERM == 1 )); then
     [[ x$TERM == xlinux ]] && _in_linux_tty=1 || _in_linux_tty=0
 fi
 
-_is_ssh=0
+_in_ssh=0
 if [ -n "$SSH_CLIENT" ]  || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
-  _is_ssh=1
+  _in_ssh=1
 fi
 # vim: ft=zsh sw=4 ts=8 sts=4 et:
