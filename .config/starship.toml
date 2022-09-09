@@ -43,7 +43,6 @@ symbol = " "
 
 [directory]
 read_only = " "
-truncation_length = 4
 truncate_to_repo = false
 # using fish style path truncation
 fish_style_pwd_dir_length = 1
