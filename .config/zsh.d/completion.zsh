@@ -106,9 +106,11 @@ zstyle ':completion:*:messages' format '%F{purple} -- %d -- %f'
 zstyle ':completion:*:warnings' format '%F{red}%B -- No Matches Found --%b%f'
 zstyle ':completion:*:corrections' format '%F{yellow}%B -- %d (errors: %e) --%b%f'
 # Description for options that are not described by the completion functions, but that have exactly one argument
-zstyle ':completion:*' auto-description '%F{green}Specify: %d%f'
+zstyle ':completion:*' auto-description 'Specify: %d'
 
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+zstyle ':completion:*:default' list-colors '=(#b)*(-- *)=0=90'
 
 #错误校正
 zstyle ':completion:*:match:*' original only
