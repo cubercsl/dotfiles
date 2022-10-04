@@ -1,8 +1,9 @@
 #!/bin/bash
-set -eu
 
 echo "Install Packages"
-packages_file="$(dirname $(dirname ${BASH_SOURCE[0]}))/packages.txt"
+
+assets="$(cd "$(dirname ${BASH_SOURCE[0]})"; pwd)/assets"
+packages_file="$assets/packages.txt"
 
 function check_linux() {
   if grep -q -E -i "debian|ubuntu" /etc/issue; then
