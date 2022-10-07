@@ -5,22 +5,7 @@ if &compatible
     set nocompatible
 endif
 
-" =================================================================================================
-" download vim-jetpack if missing
-if empty(glob("~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim"))
-  silent! execute '!curl --create-dirs -fsSLo ~/.vim/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim --create-dirs https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim'
-  autocmd VimEnter * silent! JetpackSync | source $MYVIMRC
-endif
-
-" declare plugins
-packadd vim-jetpack
-call jetpack#begin()
-  if filereadable(expand("~/.vim/plugins.vim"))
-    source ~/.vim/plugins.vim
-  endif
-call jetpack#end()
-
-" =================================================================================================
+" {{{ misc setttings
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -37,9 +22,40 @@ set shiftwidth=4
 set expandtab
 set shortmess=F
 set noshowmode
-silent! colorscheme dracula
+set foldmethod=marker
+set foldlevelstart=99
+" }}}
 
+" {{{ download vim-jetpack if missing
+let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+if !filereadable(s:jetpackfile)
+  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
+endif
+" }}}
+
+" {{{ declare plugins
+packadd vim-jetpack
+call jetpack#begin()
+  if filereadable(expand("~/.vim/plugins.vim"))
+    source ~/.vim/plugins.vim
+  endif
+call jetpack#end()
+
+for name in jetpack#names()
+  if !jetpack#tap(name)
+    call jetpack#sync()
+    break
+  endif
+endfor
+" }}}
+
+" {{{ plugin settings
+silent! colorscheme dracula
 let g:airline_theme='dracula'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#branch#enabled=1
 let g:airline_powerline_fonts=1
+" }}}
+
+" vim: ft=vim sw=2 ts=4 sts=2 et:

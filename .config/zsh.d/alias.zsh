@@ -23,6 +23,12 @@ alias dd='dd status=progress'
 alias mv='mv -v'
 alias rm='rm -v'
 
+# rsync
+alias rsync-copy="rsync -avz --progress -h"
+alias rsync-move="rsync -avz --progress -h --remove-source-files"
+alias rsync-update="rsync -avzu --progress -h"
+alias rsync-synchronize="rsync -avzu --delete --progress -h"
+
 # pastebin 
 alias pb='curl -F "c=@-" "http://fars.ee/"'
 

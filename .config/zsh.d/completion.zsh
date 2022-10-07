@@ -14,6 +14,23 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 
+# Add all defined plugins to fpath. This must be done
+# before running compinit.
+for _zsh_plugin in $plugins[@]; do
+    for _file (
+        $ZDOTDIR/plugins/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
+        /usr{/local,}/share/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
+        /usr/share/zsh/plugins/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
+    ); do
+        local plug_dir=${_file%/*}
+        if [[ -r "$_file" ]]; then
+            fpath=("$plug_dir" $fpath)
+            break
+        fi
+    done
+done
+unset _file _zsh_plugins
+
 # Load and initialize the completion system ignoring insecure directories with a
 # cache time of 20 hours, so it should almost always regenerate the first time a
 # shell is opened each day.
@@ -42,7 +59,7 @@ function compctl() {
     fi
 
     zrecompile -pq $HOME/.zshenv
-    zrecompile -pq $ZDOTDIR/.zshrc
+    zrecompile -pq $HOME/.zshrc
 
     local ZSHCONFIG=$ZDOTDIR
     for f in $ZSHCONFIG/**/*.zsh;
@@ -179,4 +196,5 @@ zstyle :compinstall filename "${HOME}/.zshrc"
 for comp_conf_file in $ZDOTDIR/completion.d/*.zsh; do
     source $comp_conf_file
 done
+unset comp_conf_file
 # vim: ft=zsh sw=4 ts=8 sts=4 et:

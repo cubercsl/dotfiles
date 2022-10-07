@@ -33,6 +33,22 @@ _profiles=(
     plugin
 )
 
+plugins=(
+    autopair                    # hlissner/zsh-autopair
+    better-man-pages            # CoelacanthusHex/dotfiles
+    command-not-found           # @omz/plugins/command-not-found
+    dotenv                      # @omz/plugins/dotenv
+    gnu-utils                   # @omz/plugins/gnu-utils
+    gpg-agent                   # @omz/plugins/gpg-agent
+    grc                         # @omz/plugins/grc.zsh
+    pyenv                       # @omz/plugin/pyenv
+    zsh-replace-multiple-dots   # momo-lab/zsh-replace-multiple-dots
+    # provided by package manager
+    zsh-autosuggestions
+    zsh-history-substring-search
+    zsh-syntax-highlighting
+)
+
 for _profile in ${_profiles[@]}; do
     [[ -r "$ZDOTDIR/$_profile.zsh" ]] && source "$ZDOTDIR/$_profile.zsh" ||\
         _cfg_warning "Can not load \"$_profile.zsh\"."
