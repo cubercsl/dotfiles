@@ -7,10 +7,10 @@ for _zsh_plugin in $plugins[@]; do
     ); do
         local plug_dir=${_file%/*}
         if [[ -r "$_file" ]]; then
-            source "$_file"
-            _loaded=1
             [[ -r $ZDOTDIR/plugins/$_zsh_plugin/$_zsh_plugin.setting.zsh ]] &&\
                 source $ZDOTDIR/plugins/$_zsh_plugin/$_zsh_plugin.setting.zsh
+            source "$_file"
+            _loaded=1
             break
         fi
     done

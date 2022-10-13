@@ -23,8 +23,8 @@ path=(
 
 typeset -U fpath
 fpath=(
-    $ZDOTDIR/completions(N-/)
-    $ZDOTDIR/functions(N-/)
+    $XDG_CONFIG_HOME/zsh.d/completions(N-/)
+    $XDG_CONFIG_HOME/zsh.d/functions(N-/)
     /usr{/local,}/share/zsh/{site-functions,vendor-completions}(-/N)
     $fpath
 )

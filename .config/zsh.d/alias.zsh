@@ -1,5 +1,5 @@
 # reload zsh
-alias reload="sync && source $HOME/.zshrc && rehash"
+alias reload="sync && exec zsh"
 
 # using exa instead of ls, and ls' alias
 if (( $+commands[exa] )); then

@@ -1,11 +1,71 @@
 unlet! skip_defaults_vim
-runtime defaults
+runtime! defaults
 
 if &compatible
     set nocompatible
 endif
 
-" {{{ misc setttings
+" Environment - Encoding, Indent, Fold {{{
+
+set title
+set ttyfast " Improves smoothness of redrawing
+
+" Don't redraw while executing macros (good performance config)
+set lazyredraw
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+
+set t_Co=256 " using 256 colors
+set guicursor+=a:blinkon0 " no cursor blink
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+
+" In many terminal emulators the mouse works just fine, thus enable it.
+set mouse=a
+
+set autoindent " Auto indent
+set smartindent " Smart indent
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+set smarttab
+
+set expandtab " Use spaces instead of tabs
+
+set wrap " Wrap lines
+
+" Use these symbols for invisible chars
+set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:»,precedes:«
+
+set foldlevel=100 " unfold all by default
+
+" }}}
+
+
+" Appearence - Scroollbar, Highlight, Linenumber {{{
+
+set shortmess=aoOtTI " Abbrev. of messages
+
+" Highlight current line
+set cursorline
+
+" the mouse pointer is hidden when characters are typed
+set mousehide
+
+" Always show current position
+set ruler
+
+" Show line number by default
+set number
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -15,47 +75,53 @@ if !has('termguicolors')
   let g:dracula_italic = 0
 endif
 
-set mouse=a
-set number
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set shortmess=F
+" }}}
+
+" Misc {{{
+
+set noshowcmd
 set noshowmode
-set foldmethod=marker
-set foldlevelstart=99
+
 " }}}
 
-" {{{ download vim-jetpack if missing
-let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
-let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
-if !filereadable(s:jetpackfile)
-  call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
-endif
-" }}}
+" Plugin {{{
 
-" {{{ declare plugins
-packadd vim-jetpack
-call jetpack#begin()
-  if filereadable(expand("~/.vim/plugins.vim"))
-    source ~/.vim/plugins.vim
+  " Download Plugin Manager vim-jetpack if missing {{{
+  let s:jetpackfile = expand('<sfile>:p:h') .. '/pack/jetpack/opt/vim-jetpack/plugin/jetpack.vim'
+  let s:jetpackurl = "https://raw.githubusercontent.com/tani/vim-jetpack/master/plugin/jetpack.vim"
+  if !filereadable(s:jetpackfile)
+    call system(printf('curl -fsSLo %s --create-dirs %s', s:jetpackfile, s:jetpackurl))
   endif
-call jetpack#end()
 
-for name in jetpack#names()
-  if !jetpack#tap(name)
-    call jetpack#sync()
-    break
-  endif
-endfor
+  " }}}
+
+  " Plugin List {{{
+
+  packadd vim-jetpack
+  call jetpack#begin()
+    if filereadable(expand("~/.vim/plugins.vim"))
+      source $HOME/.vim/plugins.vim
+    endif
+  call jetpack#end()
+
+  for name in jetpack#names()
+    if !jetpack#tap(name)
+      call jetpack#sync()
+      break
+    endif
+  endfor
+
+  " }}}
+
+  " Plugin Settings {{{
+
+  silent! colorscheme dracula
+  let g:airline_theme='dracula'
+  let g:airline#extensions#tabline#enabled=1
+  let g:airline#extensions#branch#enabled=1
+  let g:airline_powerline_fonts=1
+
+  " }}}
+
 " }}}
-
-" {{{ plugin settings
-silent! colorscheme dracula
-let g:airline_theme='dracula'
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#branch#enabled=1
-let g:airline_powerline_fonts=1
-" }}}
-
-" vim: ft=vim sw=2 ts=4 sts=2 et:
+" vim: ft=vim sw=2 ts=4 sts=2 fdm=marker fdl=1 et:
