@@ -1,0 +1,16 @@
+[user]
+	name = cubercsl
+	email = 2014cais01@gmail.com
+	signingkey = 45C64B19E9161E41
+[commit]
+	gpgSign = true
+	template = ~/.config/git/template.txt
+[pull]
+	rebase = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+# vim: sw=2 ts=4 noet:
