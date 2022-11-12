@@ -122,4 +122,9 @@ colors
 
 # Extended LS_COLORS
 eval "$(dircolors -b $ZDOTDIR/LS_COLORS)"
+
+(( $+commands[bat] )) && {
+    export MANPAGER='sh -c "col -bx | bat -pl man --theme=Dracula"'
+    export MANROFFOPT='-c'
+}
 # vim: ft=zsh sw=4 ts=8 sts=4 et:

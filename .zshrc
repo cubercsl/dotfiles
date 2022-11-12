@@ -35,7 +35,6 @@ _profiles=(
 
 plugins=(
     autopair                    # hlissner/zsh-autopair
-    better-man-pages            # CoelacanthusHex/dotfiles
     command-not-found           # @omz/plugins/command-not-found
     dotenv                      # @omz/plugins/dotenv
     gnu-utils                   # @omz/plugins/gnu-utils
