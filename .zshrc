@@ -35,6 +35,7 @@ _profiles=(
 
 plugins=(
     autopair                    # hlissner/zsh-autopair
+    colored-man-pages           # @omz/plugins/colored-man-page with patch
     command-not-found           # @omz/plugins/command-not-found
     dotenv                      # @omz/plugins/dotenv
     gnu-utils                   # @omz/plugins/gnu-utils
