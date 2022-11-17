@@ -36,6 +36,7 @@ symbol = " "
 symbol = " "
 
 [conda]
+ignore_base = false
 symbol = " "
 
 [dart]
