@@ -18,7 +18,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 # before running compinit.
 for _zsh_plugin in $plugins[@]; do
     for _file (
-        $ZDOTDIR/plugins/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
+        $ZSHCONFIG/plugins/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
         /usr{/local,}/share/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
         /usr/share/zsh/plugins/$_zsh_plugin/$_zsh_plugin{,.plugin}.zsh
     ); do
@@ -61,8 +61,8 @@ function compctl() {
     zrecompile -pq $HOME/.zshenv
     zrecompile -pq $HOME/.zshrc
 
-    local ZSHCONFIG=$ZDOTDIR
     for f in $ZSHCONFIG/**/*.zsh;
+    # local ZSHCONFIG=$ZDOTDIR
     do
         zrecompile -pq $f;
     done
@@ -193,7 +193,7 @@ zstyle ':completion:*:jobs' numbers true
 
 zstyle :compinstall filename "${HOME}/.zshrc"
 
-for comp_conf_file in $ZDOTDIR/completion.d/*.zsh; do
+for comp_conf_file in $ZSHCONFIG/completion.d/*.zsh; do
     source $comp_conf_file
 done
 unset comp_conf_file

@@ -19,9 +19,9 @@ export _ZL_DATA=${_zhist}/zlua
 
 HISTSIZE=100000
 SAVEHIST=100000
-ZDOTDIR="$XDG_CONFIG_HOME/zsh.d"
 ZSH_CACHE_HOME="$XDG_CACHE_HOME/zsh"
 ZSH_COMPDUMP="$ZSH_CACHE_HOME/zcompdump"
+ZSHCONFIG="$XDG_CONFIG_HOME/zsh.d"
 
 _profiles=(
     check
@@ -50,7 +50,7 @@ plugins=(
 )
 
 for _profile in ${_profiles[@]}; do
-    [[ -r "$ZDOTDIR/$_profile.zsh" ]] && source "$ZDOTDIR/$_profile.zsh" ||\
+    [[ -r "$ZSHCONFIG/$_profile.zsh" ]] && source "$ZSHCONFIG/$_profile.zsh" ||\
         _cfg_warning "Can not load \"$_profile.zsh\"."
 done
 unset _profile
