@@ -38,6 +38,7 @@ plugins=(
     colored-man-pages           # @omz/plugins/colored-man-page with patch
     command-not-found           # @omz/plugins/command-not-found
     dotenv                      # @omz/plugins/dotenv
+    fzf                         # @omz/plugins/fzf
     gnu-utils                   # @omz/plugins/gnu-utils
     gpg-agent                   # @omz/plugins/gpg-agent
     grc                         # @omz/plugins/grc.zsh
