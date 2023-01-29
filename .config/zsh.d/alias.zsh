@@ -1,3 +1,8 @@
+# for systemd
+alias limit-run='systemd-run --user --pty --same-dir --wait --collect --slice=limit-run.slice '
+alias limit-cpu='systemd-run --user --pty --same-dir --wait --collect --slice=limit-cpu.slice '
+alias limit-mem='systemd-run --user --pty --same-dir --wait --collect --slice=limit-mem.slice '
+
 # reload zsh
 alias reload="sync && exec zsh"
 

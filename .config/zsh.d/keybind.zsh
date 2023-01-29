@@ -73,4 +73,11 @@ sudo-command-line() {
 zle -N sudo-command-line
 # [Esc] [Esc]
 bindkey -- '\e\e' sudo-command-line
+
+if (( $+commands[fzf] )); then
+    source /usr/local/share/fzf/key-bindings.zsh 2>/dev/null || \
+    source /usr/share/fzf/key-bindings.zsh 2>/dev/null
+fi
+
+
 # vim: ft=zsh sw=4 ts=8 sts=4 et:
