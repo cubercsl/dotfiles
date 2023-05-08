@@ -44,6 +44,11 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
+truncate_to_repo = false
+# using fish style path truncation
+fish_style_pwd_dir_length = 1
+# using logical path insetad of resolving symbol link
+use_logical_path = true
 
 [docker_context]
 symbol = " "
