@@ -26,7 +26,6 @@ ZSHCONFIG="$XDG_CONFIG_HOME/zsh.d"
 _profiles=(
     check
     prompt
-    p10k
     config
     keybind
     alias
