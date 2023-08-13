@@ -119,7 +119,10 @@ set noshowmode
   let g:airline_theme='dracula'
   let g:airline#extensions#tabline#enabled=1
   let g:airline#extensions#branch#enabled=1
-  let g:airline_powerline_fonts=1
+
+  if $TERM != 'linux'
+    let g:airline_powerline_fonts=1
+  endif
 
   if executable('wakatime') || executable('wakatime-cli')
     packadd vim-wakatime
