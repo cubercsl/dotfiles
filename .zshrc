@@ -47,7 +47,7 @@ plugins=(
     # provided by package manager
     zsh-autosuggestions
     zsh-history-substring-search
-    zsh-syntax-highlighting
+    fast-syntax-highlighting
 )
 
 for _profile in ${_profiles[@]}; do
