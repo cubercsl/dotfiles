@@ -74,7 +74,6 @@ endif
 if !has('termguicolors')
   let g:dracula_italic = 0
 endif
-
 " }}}
 
 " Misc {{{
@@ -119,7 +118,7 @@ set noshowmode
   let g:airline_theme='dracula'
   let g:airline#extensions#tabline#enabled=1
   let g:airline#extensions#branch#enabled=1
-
+  hi Normal guibg=NONE ctermbg=NONE
   if $TERM != 'linux'
     let g:airline_powerline_fonts=1
   endif
