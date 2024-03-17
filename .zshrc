@@ -28,8 +28,8 @@ _profiles=(
     config
     keybind
     alias
-    plugin
     prompt
+    plugin
     completion
 )
 
