@@ -29,25 +29,8 @@ _profiles=(
     config
     keybind
     alias
-    completion
     plugin
-)
-
-plugins=(
-    autopair                    # hlissner/zsh-autopair
-    colored-man-pages           # @omz/plugins/colored-man-page with patch
-    command-not-found           # @omz/plugins/command-not-found
-    dotenv                      # @omz/plugins/dotenv
-    fzf                         # @omz/plugins/fzf
-    gnu-utils                   # @omz/plugins/gnu-utils
-    gpg-agent                   # @omz/plugins/gpg-agent
-    grc                         # @omz/plugins/grc.zsh
-    pyenv                       # @omz/plugin/pyenv
-    zsh-replace-multiple-dots   # momo-lab/zsh-replace-multiple-dots
-    # provided by package manager
-    zsh-autosuggestions
-    zsh-history-substring-search
-    fast-syntax-highlighting
+    completion
 )
 
 for _profile in ${_profiles[@]}; do
