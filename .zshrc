@@ -25,11 +25,11 @@ ZSHCONFIG="$XDG_CONFIG_HOME/zsh.d"
 
 _profiles=(
     check
-    prompt
     config
     keybind
     alias
     plugin
+    prompt
     completion
 )
 

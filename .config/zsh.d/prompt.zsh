@@ -1,15 +1,3 @@
-ZSH_THEME=powerlevel10k
-for _file (
-    $ZSHCONFIG/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme
-    /usr{/local,}/share/zsh-theme-$ZSH_THEME/$ZSH_THEME.zsh-theme
-    /usr/share/zsh/themes/$ZSH_THEME/$ZSH_THEME.zsh-theme
-); do
-    if [[ -r "$_file" ]]; then
-        source "$_file"
-        break
-    fi
-done
-
 if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
     # capable terminal
     [[ ! -f $ZSHCONFIG/prompt.d/p10k.zsh ]] || source $ZSHCONFIG/prompt.d/p10k.zsh
