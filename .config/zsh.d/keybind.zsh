@@ -102,13 +102,13 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 fi
 
 # [Ctrl-Delete] - delete whole forward-word
-bindkey -- "$key[Ctrl-Delete]" kill-word
+[[ -n "$key[Ctrl-Delete]" ]] && bindkey -- "$key[Ctrl-Delete]" kill-word
 # [Ctrl-RightArrow] - move forward one word
-bindkey -- "$key[Ctrl-Right]" forward-word
+[[ -n "$key[Ctrl-Right]"  ]] && bindkey -- "$key[Ctrl-Right]" forward-word
 # [Ctrl-LeftArrow] - move backward one word
-bindkey -- "$key[Ctrl-Left]" backward-word
-
-bindkey -- "$key[Space]" magic-space                                # [Space] - don't do history expansion
+[[ -n "$key[Ctrl-Left]"   ]] && bindkey -- "$key[Ctrl-Left]" backward-word
+# [Space] - don't do history expansion
+[[ -n "$key[Space]"       ]] && bindkey -- "$key[Space]" magic-space
 
 # Edit the current command line in $EDITOR
 autoload -U edit-command-line

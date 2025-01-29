@@ -28,7 +28,7 @@ function colored() {
   local -a environment
 
   if (( $+commands[bat] )); then
-    environment+=( MANPAGER='sh -c "col -bx | bat -pl man --theme=Dracula"' )
+    environment+=( MANPAGER='sh -c "col -bx | bat -pl man"' )
     environment+=( MANROFFOPT='-c' )
   else
     # Convert associative array to plain array of NAME=VALUE items.

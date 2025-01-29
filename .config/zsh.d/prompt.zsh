@@ -1,3 +1,5 @@
+GITSTATUS_CACHE_DIR=${XDG_DATA_HOME:-$HOME/.local/share}/gitstatus
+
 if zmodload zsh/terminfo && (( terminfo[colors] >= 256 )); then
     # capable terminal
     [[ ! -f $ZSHCONFIG/prompt.d/p10k.zsh ]] || source $ZSHCONFIG/prompt.d/p10k.zsh

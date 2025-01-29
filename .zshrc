@@ -23,21 +23,20 @@ ZSH_CACHE_HOME="$XDG_CACHE_HOME/zsh"
 ZSH_COMPDUMP="$ZSH_CACHE_HOME/zcompdump"
 ZSHCONFIG="$XDG_CONFIG_HOME/zsh.d"
 
-_profiles=(
+local _profiles=(
     check
     config
     keybind
     alias
-    prompt
     plugin
     completion
+    prompt
 )
 
 for _profile in ${_profiles[@]}; do
     [[ -r "$ZSHCONFIG/$_profile.zsh" ]] && source "$ZSHCONFIG/$_profile.zsh" ||\
         _cfg_warning "Can not load \"$_profile.zsh\"."
 done
-unset _profile
 
 # Load user config.
 if [[ -f ~/.zshrc.local ]]; then

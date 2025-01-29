@@ -21,7 +21,7 @@ for plugin in $ZSHCONFIG/plugins/*.plugin.zsh; do
     plugins+=(is-snippet $plugin)
 done
 
-zinit for $plugins[@]
+zinit light-mode for $plugins[@]
 
 # load the gpg-agent plugin only if we are not in an ssh session
 if (( _in_ssh == 0 )); then
