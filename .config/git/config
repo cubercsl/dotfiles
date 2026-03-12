@@ -14,3 +14,9 @@
 	required = true
 
 # vim: sw=2 ts=4 noet:
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

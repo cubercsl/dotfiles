@@ -7,4 +7,8 @@ else
     # might be TTY or some other not very capable terminal
     [[ ! -f $ZSHCONFIG/prompt.d/p10k-portable.zsh ]] || source $ZSHCONFIG/prompt.d/p10k-portable.zsh
 fi
+
+if [[ "$TERM_PROGRAM" != "vscode" ]] && [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 # vim: ft=zsh sw=4 ts=8 sts=4 et:

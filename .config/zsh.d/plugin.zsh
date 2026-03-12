@@ -10,6 +10,7 @@ plugins=(
     OMZP::command-not-found
     OMZP::dotenv
     OMZP::fzf
+    OMZP::gpg-agent
     hlissner/zsh-autopair
     momo-lab/zsh-replace-multiple-dots
     zsh-users/zsh-history-substring-search

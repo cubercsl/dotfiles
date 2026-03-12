@@ -1,5 +1,4 @@
 ## .zshrc
-
 _cfg_info() {
     print -P "%F{green}[INFO]%f $1"
 }
